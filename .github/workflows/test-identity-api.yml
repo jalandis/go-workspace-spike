@@ -1,9 +1,9 @@
-name: Run tests
+name: Run Identity API Tests
 on:
   workflow_dispatch:
   pull_request:
-    paths:
-      - 'identity-api/**'
+    paths-ignore:
+      - 'assessment-api/**'
     branches:
       - main
 jobs:
