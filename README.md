@@ -18,3 +18,7 @@
 Test spike is using the official Go Workspace tutorial along with a lot of stub code.
 
 https://go.dev/doc/tutorial/workspaces
+
+### Testing
+
+https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-paths-for-pull-request-or-push-events
