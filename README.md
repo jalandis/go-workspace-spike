@@ -2,15 +2,15 @@
 
 ## Wanted Features
 
-- Testing should run based on where files are edited
-- Heroku builds off workspace
+- [x] Testing should run based on where files are edited
+- [ ] Heroku builds off workspace
     - No official support yet, may need to create a custom Heroku build
     - https://github.com/heroku/heroku-buildpack-go/pull/484
 
 ## Detailed use case
 
-    - [ ] Multiple server commands
-    - [ ] Re-usable GO modules (PB, ACL, etc.)
+    - [x] Multiple server commands
+    - [x] Re-usable GO modules (PB, ACL, etc.)
     - [ ] Heroku builds
 
 ## GO Workspaces
@@ -22,3 +22,33 @@ https://go.dev/doc/tutorial/workspaces
 ### Testing
 
 https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-filters-to-target-specific-paths-for-pull-request-or-push-events
+
+It is possible to filter by path, this should allow Assessment/Identity code changes to limit the number of tests they need to run.
+
+Top level files may trigger all tests, depends on how well we filter files in the workflows
+
+### Pros
+
+1. Single repo will greatly reduce code duplication
+2. Developer setup simplifies
+3. Developer has easy visibility to all code
+4. Standardization improves (code conventions, etc)
+5. Devloper collaboration across teams becomes simple
+
+### Cons
+
+1. Requires backward compatible Go module changes
+#### Local GO module dependency Versioning
+Versioning of included modules will need to be upgraded together
+    - Backwards compatibility will be needed in all module library changes
+
+Protobuf + ACL Examples
+
+    PB GO code updated will be consumable by both Identity + Assessment projects
+        - Changes will need to be backwards compatible
+        - This makes sense as the PB define the API's
+
+    ACL code is another example
+        - Access to different data restricted by ACL
+        - Changes will need to be backwards compatible
+        - In some cases, 2 different versions of the same module would be easier to work with

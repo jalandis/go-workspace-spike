@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"blab.com/library/acl"
 )
 
 const Port = ":8071"
@@ -14,5 +16,10 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
+	if !acl.HasAccess(r.URL.Path[1:]) {
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	fmt.Fprintf(w, "Hello Assessment API, %s!", r.URL.Path[1:])
 }

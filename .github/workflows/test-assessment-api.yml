@@ -31,4 +31,8 @@ jobs:
         run: sudo apt-get update
       
       - name: Test
-        run: echo "Testing Assessment API"
+        run: |
+          set -euox pipefail
+          echo "Testing Assessment API"
+          (cd ./assessment-api ; go test ./...)
+          (cd ./library ; go test ./...)
