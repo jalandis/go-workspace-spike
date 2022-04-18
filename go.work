@@ -1,6 +1,7 @@
 go 1.18
 
 use (
-    ./assessment-api
-    ./identity-api
+	./assessment-api
+	./identity-api
+	./library
 )
