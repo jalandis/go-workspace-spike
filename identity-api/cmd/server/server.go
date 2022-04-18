@@ -8,7 +8,7 @@ import (
 const Port = ":8070"
 
 func main() {
-	fmt.Printf("Starting Identity server on %s\n", Port)
+	fmt.Printf("Starting server on %s\n", Port)
 	http.HandleFunc("/", HelloServer)
 	http.ListenAndServe(Port, nil)
 }

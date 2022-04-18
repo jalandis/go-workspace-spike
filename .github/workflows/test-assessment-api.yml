@@ -1,9 +1,9 @@
-name: Run tests
+name: Run Assessment API Tests
 on:
   workflow_dispatch:
   pull_request:
-    paths:
-      - '/assessment-api/**'
+    paths-ignore:
+      - 'identity-api/**'
     branches:
       - main
 jobs:
