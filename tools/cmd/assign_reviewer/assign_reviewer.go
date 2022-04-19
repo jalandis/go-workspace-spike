@@ -59,9 +59,13 @@ func main() {
 			continue
 		}
 
-		client.PullRequests.RequestReviewers(ctx, "jalandis", "go-workspace-spike", pullRequestID, github.ReviewersRequest{
-			Reviewers: []string{*member.Login},
-		})
-		return
+		fmt.Println(*member.Login)
+	}
+
+	_, _, err = client.PullRequests.RequestReviewers(ctx, "jalandis", "go-workspace-spike", pullRequestID, github.ReviewersRequest{
+		Reviewers: []string{"jalandis"},
+	})
+	if err != nil {
+		log.Fatal(fmt.Errorf("failed to request reviewer: %w", err))
 	}
 }
