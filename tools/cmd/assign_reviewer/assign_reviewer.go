@@ -41,9 +41,9 @@ func main() {
 		log.Fatal("pullRequestID parameter is required")
 	}
 
-	token := os.Getenv("GITHUB_OAUTH_TOKEN")
+	token := os.Getenv("OAUTH_TOKEN")
 	if token == "" {
-		log.Fatal("Missing GITHUB_OAUTH_TOKEN")
+		log.Fatal("Missing OAUTH_TOKEN")
 	}
 
 	ctx := context.Background()
