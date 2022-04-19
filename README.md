@@ -30,7 +30,7 @@ Top level files may trigger all tests, depends on how well we filter files in th
 
 ### Assigned Reviewer
 
-Using Github actions filtered by folder and using (go-github)[https://github.com/google/go-github], a randomly assigned user from the correct team can be assigned to a review.  Users are grouped by currently open pull requests with random selection from lowest assigned group.  This prevents one user from being assigned all reviews.
+Using Github actions filtered by folder and using (go-github)[https://github.com/google/go-github], a randomly assigned user from the correct team can be assigned to a review.  Users are grouped by currently open pull requests with random selection from the lowest assigned group.  This prevents one user from being assigned all reviews.
 
 The example I have created still needs some work but there are no more known unknowns.
 
@@ -40,7 +40,7 @@ The example I have created still needs some work but there are no more known unk
 2. Developer setup simplifies
 3. Developer has easy visibility to all code
 4. Standardization improves (code conventions, etc)
-5. Devloper collaboration across teams becomes simple
+5. Developer collaboration across teams becomes simple
 
 ### Cons
 
