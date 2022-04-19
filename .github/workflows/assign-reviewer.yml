@@ -1,0 +1,35 @@
+name: Assign reviewer
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened]
+jobs:
+  build:
+    name: Assign Reviewer Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: "^1.18"
+      
+      - name: Go Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Apt Update
+        run: sudo apt-get update
+      
+      - name: Assign Reviewer Step
+        env:
+          OAUTH_TOKEN: "${{ secrets.OAUTH_TOKEN }}"  
+        run: |
+          set -euox pipefail
+          go run ./tools/cmd/assign_reviewer/assign_reviewer.go -teamName assessment -pullRequestID "${{ github.event.number }}"
