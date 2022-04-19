@@ -3,7 +3,7 @@
 ## Wanted Features
 
 - [x] Testing should run based on where files are edited
-- [x] Pull request reviews assigned appropriatly
+- [x] Pull request reviews assigned appropriately
 - [ ] Heroku builds off workspace
     - No official support yet, may need to create a custom Heroku build
     - https://github.com/heroku/heroku-buildpack-go/pull/484
@@ -30,7 +30,7 @@ Top level files may trigger all tests, depends on how well we filter files in th
 
 ### Assigned Reviewer
 
-Using Github actions filtered by folder and using (go-github)[https://github.com/google/go-github], a randomly assigned user from the correct team can be assigned to a review.
+Using Github actions filtered by folder and using (go-github)[https://github.com/google/go-github], a randomly assigned user from the correct team can be assigned to a review.  Users are grouped by currently open pull requests with random selection from the lowest assigned group.  This prevents one user from being assigned all reviews.
 
 The example I have created still needs some work but there are no more known unknowns.
 
@@ -40,11 +40,12 @@ The example I have created still needs some work but there are no more known unk
 2. Developer setup simplifies
 3. Developer has easy visibility to all code
 4. Standardization improves (code conventions, etc)
-5. Devloper collaboration across teams becomes simple
+5. Developer collaboration across teams becomes simple
 
 ### Cons
 
 1. Requires backward compatible Go module changes
+
 #### Local GO module dependency Versioning
 Versioning of included modules will need to be upgraded together
     - Backwards compatibility will be needed in all module library changes
