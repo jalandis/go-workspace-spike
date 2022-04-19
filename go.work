@@ -3,5 +3,10 @@ go 1.18
 use (
 	./assessment-api
 	./identity-api
+
+    // Shared code used by more than one module
 	./library
+
+    // Build tools not intended for production
+    ./tools
 )

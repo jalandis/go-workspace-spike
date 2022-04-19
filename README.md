@@ -3,15 +3,16 @@
 ## Wanted Features
 
 - [x] Testing should run based on where files are edited
+- [ ] Pull request reviews assigned appropriatly
 - [ ] Heroku builds off workspace
     - No official support yet, may need to create a custom Heroku build
     - https://github.com/heroku/heroku-buildpack-go/pull/484
 
 ## Detailed use case
 
-    - [x] Multiple server commands
-    - [x] Re-usable GO modules (PB, ACL, etc.)
-    - [ ] Heroku builds
+- [x] Multiple server commands
+- [x] Re-usable GO modules (PB, ACL, etc.)
+- [ ] Heroku builds
 
 ## GO Workspaces
 
@@ -44,11 +45,11 @@ Versioning of included modules will need to be upgraded together
 
 Protobuf + ACL Examples
 
-    PB GO code updated will be consumable by both Identity + Assessment projects
-        - Changes will need to be backwards compatible
-        - This makes sense as the PB define the API's
+PB GO code updated will be consumable by both Identity + Assessment projects
+    - Changes will need to be backwards compatible
+    - This makes sense as the PB define the API's
 
-    ACL code is another example
-        - Access to different data restricted by ACL
-        - Changes will need to be backwards compatible
-        - In some cases, 2 different versions of the same module would be easier to work with
+ACL code is another example
+    - Access to different data restricted by ACL
+    - Changes will need to be backwards compatible
+    - In some cases, 2 different versions of the same module would be easier to work with
