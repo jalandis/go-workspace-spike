@@ -3,7 +3,7 @@
 ## Wanted Features
 
 - [x] Testing should run based on where files are edited
-- [ ] Pull request reviews assigned appropriatly
+- [x] Pull request reviews assigned appropriatly
 - [ ] Heroku builds off workspace
     - No official support yet, may need to create a custom Heroku build
     - https://github.com/heroku/heroku-buildpack-go/pull/484
@@ -27,6 +27,12 @@ https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-f
 It is possible to filter by path, this should allow Assessment/Identity code changes to limit the number of tests they need to run.
 
 Top level files may trigger all tests, depends on how well we filter files in the workflows
+
+### Assigned Reviewer
+
+Using Github actions filtered by folder and using (go-github)[https://github.com/google/go-github], a randomly assigned user from the correct team can be assigned to a review.
+
+The example I have created still needs some work but there are no more known unknowns.
 
 ### Pros
 
