@@ -27,5 +27,5 @@ func AssessmentServer(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "Hello Assessment API, %s!", r.URL.Path[1:])
+	fmt.Fprintf(w, "Hello Assessment API, %s!!!", r.URL.Path[1:])
 }
